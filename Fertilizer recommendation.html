@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fertilizer Recommendation</title>
+    <style>header{
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    body{
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    form {
+        align-items: center;
+        height: 500px;
+        width: 500px;
+        margin: 50px auto;
+        margin-top: 40px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"], select {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            margin: 10px 0;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+    }
+    label{
+        margin-top: 20px;
+    }
+    input[type="submit"]:hover {
+            background-color: #45a049;
+    }
+    h3 {
+        text-align: center;
+        color: #333;
+
+
+
+    }
+    form .label{
+        border-radius: 50px;
+
+
+    }
+
+    </style>
+</head>
+<body>
+    <header>Fertilizer Recommendation System</header>
+    <form method="POST" action="/predict">
+        <label>Temperature:</label><input type="number" name="Temparature" required><br><br>
+        <label>Humidity:</label><input type="number" name="Humidity " required><br><br>
+        <label>Moisture:</label><input type="number" name="Moisture" required><br><br>
+        <label>Soil Type:</label>
+        <select name="SoilType" required>
+            <option value="Select">Select</option>
+            <option value="Sandy">Sandy</option>
+            <option value="Loamy">Loamy</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="Clayey">Clayey</option>
+        </select><br>
+        <label>Crop Type:</label>
+        <select name="CropType" required>
+            <option value="Select">Select</option>
+            <option value="Maize">Maize</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Tobacco">Tobacco</option>
+            <option value="Paddy">Paddy</option>
+            <option value="Barley">Barley</option>
+            <option value="Wheat">Wheat</option>
+            <br>
+        </select><br><br>
+        <label>Nitrogen:</label><input type="number" name="Nitrogen" required><br><br>
+        <label>Potassium:</label><input type="number" name="Potassium" required><br><br>
+        <label>Phosphorous:</label><input type="number" name="Phosphorous" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
